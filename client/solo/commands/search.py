@@ -134,7 +134,7 @@ Search for packages.
             package = entropy.dep.remove_slot(package)
             package = entropy.dep.remove_tag(package)
             pkg_ids = set(dbconn.searchPackages(
-                    package, slot = slot, exact = _exact,
+                    package, exact = self._exact, slot = slot,
                     tag = tag, just_id = True, order_by = "atom"))
             if not pkg_ids: # look for something else?
                 pkg_id, _rc = dbconn.atomMatch(
